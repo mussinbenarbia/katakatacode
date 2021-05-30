@@ -1,0 +1,40 @@
+body {
+  background-color: #2d2d2d;
+}
+
+.wrapper {
+  position: relative;
+  font-size: 2rem;
+}
+
+.snippet {
+  position: absolute;
+}
+
+.typing-test {
+  position: absolute;
+  margin-top: +5px;
+  margin-left: +2px;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  line-height: 1.5;
+  outline: none;
+  z-index: 2;
+  color: transparent;
+}
+
+.curr-letter {
+  color: aliceblue;
+  text-decoration: underline !important;
+}
+
+@keyframes blinking {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
