@@ -1,27 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import useTypingGame from "react-typing-game-hook";
 import "./TypingGame.css";
 
-const TypingGame = ({ code, language }) => {
-  let text = code;
+const TypingGame = ({ code, updateKey, increaseCharCount }) => {
   const {
-    states: {
-      charsState,
-      length,
-      currIndex,
-      currChar,
-      correctChar,
-      errorChar,
-      phase,
-      startTime,
-      endTime,
-    },
+    states: { charsState, currIndex, phase, correctChar },
     actions: { insertTyping, resetTyping },
-  } = useTypingGame(text, {
+  } = useTypingGame(code.code, {
     skipCurrentWordOnSpace: false,
     pauseOnError: true,
     countErrors: "everytime",
   });
+
+  const typingTestDiv = useRef(null);
+  useEffect(() => {
+    window.Prism.highlightAll();
+    typingTestDiv.current.focus();
+  });
+
+  useEffect(() => {
+    if (phase === 2) {
+      updateKey();
+    }
+  }, [phase]);
+
+  useEffect(() => {
+    if (correctChar !== 0) increaseCharCount();
+  }, [correctChar]);
 
   const handleKey = (key) => {
     if (key === "Escape") {
@@ -35,12 +40,13 @@ const TypingGame = ({ code, language }) => {
     <div className="typing-game-wrapper">
       <div
         className="typing-test"
+        ref={typingTestDiv}
         onKeyDown={(e) => {
-          handleKey(e.key);
           e.preventDefault();
+          handleKey(e.key);
         }}
         tabIndex={0}>
-        {text.split("").map((char, index) => {
+        {code.code.split("").map((char, index) => {
           let state = charsState[index];
           let color = state === 0 ? "" : state === 1 ? "green" : "red";
           return (
@@ -54,7 +60,12 @@ const TypingGame = ({ code, language }) => {
         })}
       </div>
       <div className="snippet">
-        <code className={`lang-${language}`}>{text}</code>
+        <code className={`lang-${code.language}`}>{code.code}</code>
+        <code className={`lang-javascript`}>
+          <span className="test">l</span>
+          <span>e</span>
+          <span>t</span>
+        </code>
       </div>
     </div>
   );
