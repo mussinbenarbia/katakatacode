@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import TypingGame from "./TypingGame";
 import Timer from "./components/Timer";
 import Splash from "./components/Splash";
@@ -6,12 +6,15 @@ import uniqueRandom from "unique-random";
 import "./App.css";
 const codeArray = [
   {
-    code: `int main () { cout << "Hello World!"; return 0; }`,
+    code: `int main () {\n\tcout << "Hello World!";\n\treturn 0;\n}`,
     language: "cpp",
   },
-  { code: `const person = {name:"Mussin", age:28};`, language: "javascript" },
   {
-    code: `let arr = testArr.match("random", "code");`,
+    code: `const person = {\n\tname: "Mussin",\n\tage: 28\n};`,
+    language: "javascript",
+  },
+  {
+    code: `let arr = testArr.match("/[A-Z]/g", "pizza");`,
     language: "javascript",
   },
   {
@@ -26,13 +29,17 @@ const codeArray = [
     code: `const code = codeArray[Math.floor(Math.random() * codeArray.length)];`,
     language: "javascript",
   },
+  {
+    code: `def require_all_files(path)\n\t$:.push path\n\trbfiles = Dir.entries(path).select {|x| /\\.rb\\z/ =~ x}\n\tend`,
+    language: "ruby",
+  },
 ];
 const App = () => {
   const [gamePhase, setGamePhase] = useState(0);
   const [code, setCode] = useState("");
   const [renderKey, setRenderKey] = useState(0);
   const [characters, setCharacters] = useState(0);
-  const [testDuration, setTestDuration] = useState(500);
+  const [testDuration, setTestDuration] = useState(60);
   const [expiryTime, setExpiryTime] = useState(null);
   const random = uniqueRandom(0, codeArray.length - 1);
 
@@ -55,7 +62,9 @@ const App = () => {
 
   useEffect(() => {
     addStartListeners();
-    setCodeSnippet();
+    setCode(codeArray[0]);
+    codeArray.shift();
+    // setCodeSnippet();
   }, []);
 
   const startGame = () => {
@@ -71,7 +80,9 @@ const App = () => {
   };
 
   const updateKey = () => {
-    setCodeSnippet();
+    // setCodeSnippet();
+    setCode(codeArray[0]);
+    codeArray.shift();
     setRenderKey((oldKey) => (oldKey += 1));
   };
 

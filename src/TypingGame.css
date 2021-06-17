@@ -20,24 +20,24 @@
   margin-left: +2px;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
-  white-space: pre;
   line-height: 1.5;
   outline: none;
   z-index: 2;
-  color: transparent;
+  color: #ccc;
+  white-space: pre-wrap;
 }
 
 .curr-letter {
-  color: aliceblue;
-  text-decoration: underline !important;
+  /* border: 1px solid aliceblue; */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white !important;
 }
 
-@keyframes blinking {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
+.wrong {
+  color: red !important;
+}
+
+.tab-return {
+  font-size: 1.2rem;
+  opacity: 0.3;
 }

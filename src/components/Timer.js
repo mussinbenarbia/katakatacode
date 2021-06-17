@@ -15,7 +15,8 @@ export default function Timer({ expiryTimestamp, setGamePhase }) {
   return (
     <div id="clock" style={{ textAlign: "center" }}>
       <div>
-        <span>{minutes}</span>:<span>{seconds}</span>
+        <span>{minutes}</span>:
+        <span>{seconds.toString().length === 1 ? `0${seconds}` : seconds}</span>
       </div>
     </div>
   );
