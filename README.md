@@ -33,7 +33,7 @@
 
 ## About The Project
 
-This is an app for software developers who want to improve their <strong>code</strong> typing speed 👩‍💻 👨‍💻
+This is an app for software developers who want to improve their <strong>code</strong> typing speed 👩‍💻 👨‍💻<br>
 Test your skills with random code snippets written in various programming languages.<br>
 <code>Typing Text !== Typing Code</code>
 
