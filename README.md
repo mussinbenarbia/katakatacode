@@ -57,7 +57,7 @@ Please feel free to contribute if you want!
 
 - Code Snippets<br>
   It would be great if you could contribute with code snippets to add to the app. Ideally a code snippet is 1~3 lines long and is something that is challenging/not-too-easy to type.
-  To submit a code snippet, fork the repo, add the snippet to src/helpers/codeSnippets.js
+  To submit a code snippet, fork the repo, make a new branch, add the snippet to src/helpers/codeSnippets.js and open a PR against the dev branch.
   Use "\n" for new lines and "\t" for tab space.
 
 ## License
