@@ -23,7 +23,8 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
-    <li><a href="#comingsoon">Coming Soon</a></li>
+    <li><a href="#coming-soon">Coming Soon</a></li>
+    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -46,8 +47,18 @@ Test your skills with random code snippets written in various programming langua
   <ol>
     <li>New code snippets</li>
     <li>Test duration choice</li>
-    <li>User accounts and test results log</li>
+    <li>User accounts and results log</li>
+    <li>Tweet your result</li>
   </ol>
+
+## Contributing
+
+Please feel free to contribute if you want!
+
+- Code Snippets<br>
+  It would be great if you could contribute with code snippets to add to the app. Ideally a code snippet is 1~3 lines long and is something that is challenging/not-too-easy to type.
+  To submit a code snippet, fork the repo, add the snippet to src/helpers/codeSnippets.js
+  Use "\n" for new lines and "\t" for tab space.
 
 ## License
 
@@ -60,11 +71,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Email: [contact@mussinben.com](mailto:contact@mussinben.com)
 <br />
 LinkedIn: [https://linkedin.com/in/mussinbenarbia](https://linkedin.com/in/mussinbenarbia)
-
-<!-- ACKNOWLEDGEMENTS -->
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/mussinbenarbia/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/mussinbenarbia/repo/graphs/contributors

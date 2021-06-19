@@ -1,32 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import useTypingGame from "react-typing-game-hook";
+import { buildCharClassLookup } from "../helpers/functions";
 import "./TypingGame.css";
-import Prism from "prismjs";
-require("prismjs/components/prism-clike.js");
-require("prismjs/components/prism-c.js");
-require("prismjs/components/prism-cpp.js");
-require("prismjs/components/prism-python.js");
-require("prismjs/components/prism-ruby.js");
 
 const TypingGame = ({ code, updateKey, increaseCharCount }) => {
   const [charClassLookup, setCharClassLookup] = useState({});
   useEffect(() => {
-    const lookupObj = {};
-    let prismiFied = Prism.highlight(
-      code.code,
-      Prism.languages[code.language],
-      code.language
-    );
-    let el = document.createElement("div");
-    el.innerHTML = prismiFied;
-    let index = 0;
-    el.childNodes.forEach((node) => {
-      for (let letter of node.textContent) {
-        lookupObj[index] = node.className || "";
-        index++;
-      }
-    });
-    setCharClassLookup(lookupObj);
+    setCharClassLookup(buildCharClassLookup(code));
   }, []);
 
   const {
@@ -86,7 +66,7 @@ const TypingGame = ({ code, updateKey, increaseCharCount }) => {
               className={`${currIndex + 1 === index ? "curr-letter" : ""} ${
                 charClassLookup[index]
               } ${rightOrWrong} ${tabOrBreak ? "tab-return" : ""} `}>
-              {char === "\n" ? " ↩\n" : char === "\t" ? "→\t" : char}
+              {char === "\n" ? " ↩ \n" : char === "\t" ? "→\t" : char}
             </span>
           );
         })}
