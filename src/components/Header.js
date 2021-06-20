@@ -9,6 +9,7 @@ export default function Header() {
       <div>
         <a
           target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/mussinbenarbia/katakatacode"
           className="text-lg cursor-pointer no-underline ml-2">
           About
