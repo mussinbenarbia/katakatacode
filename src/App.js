@@ -20,8 +20,10 @@ const App = () => {
   const addStartListeners = () => {
     // document.addEventListener("click", startGame);
     document.addEventListener("keydown", function handler(e) {
-      if (e.code === "Space") startGame();
-      this.removeEventListener("keydown", handler);
+      if (e.code === "Space") {
+        startGame();
+        this.removeEventListener("keydown", handler);
+      }
     });
   };
 
