@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import TypingGame from "./components/TypingGame";
 import Timer from "./components/Timer";
 import Splash from "./components/Splash";
-import "./App.css";
 import codeSnippets from "./helpers/codeSnippets";
+import "./App.css";
 
 const App = () => {
   const [gamePhase, setGamePhase] = useState(0);
@@ -32,13 +32,12 @@ const App = () => {
 
   useEffect(() => {
     addStartListeners();
-    setCodeSnippet();
   }, []);
 
   const startGame = () => {
-    removeStartListeners();
-
+    setCodeSnippet();
     setExpiryTime(calculateExpiryTime());
+    removeStartListeners();
     setGamePhase(1);
   };
 
