@@ -31,4 +31,8 @@ module.exports = [
     code: `SELECT * FROM A x LEFT JOIN B y ON y.aId = x.Id`,
     language: "sql",
   },
+  {
+    code: `def difference_by(a, b, fn):\n\tb = set(map(fn, b))\n\treturn [item for item in a if fn(item) not in b]`,
+    language: "python",
+  },
 ];
