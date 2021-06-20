@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TypingGame from "./components/TypingGame";
 import Timer from "./components/Timer";
 import Splash from "./components/Splash";
+import LanguageLogo from "./components/LanguageLogo";
 import "./App.css";
 import codeSnippets from "./helpers/codeSnippets";
 
@@ -68,6 +69,7 @@ const App = () => {
         if (gamePhase === 1) {
           return (
             <div id="game">
+              <LanguageLogo language={code.language} />
               <Timer
                 expiryTimestamp={expiryTime}
                 autoStart={true}
