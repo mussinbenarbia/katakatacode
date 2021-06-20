@@ -8,11 +8,11 @@ module.exports = [
     language: "javascript",
   },
   {
-    code: `let arr = testArr.match("/[A-Z]/g", "pizza");`,
+    code: `let arr = testArr.replaceAll("/[A-Z]/g", "pizza");`,
     language: "javascript",
   },
   {
-    code: `let result = something.map(el => <span>yo</span>);`,
+    code: `let elements = names.map(name => <span>\${name}</span>);`,
     language: "javascript",
   },
   {
