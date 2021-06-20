@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import TypingGame from "./components/TypingGame";
 import Timer from "./components/Timer";
 import Splash from "./components/Splash";
+import LanguageLogo from "./components/LanguageLogo";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import codeSnippets from "./helpers/codeSnippets";
 import "./App.css";
 
@@ -15,13 +18,11 @@ const App = () => {
   const [expiryTime, setExpiryTime] = useState(null);
 
   const addStartListeners = () => {
-    document.addEventListener("click", startGame);
-    document.addEventListener("keydown", startGame);
-  };
-
-  const removeStartListeners = () => {
-    document.removeEventListener("click", startGame);
-    document.removeEventListener("keydown", startGame);
+    // document.addEventListener("click", startGame);
+    document.addEventListener("keydown", function handler(e) {
+      if (e.code === "Space") startGame();
+      this.removeEventListener("keydown", handler);
+    });
   };
 
   const calculateExpiryTime = () => {
@@ -37,7 +38,6 @@ const App = () => {
   const startGame = () => {
     setCodeSnippet();
     setExpiryTime(calculateExpiryTime());
-    removeStartListeners();
     setGamePhase(1);
   };
 
@@ -60,6 +60,7 @@ const App = () => {
 
   return (
     <div id="app">
+      <Header />
       {(() => {
         if (gamePhase === 0) {
           return <Splash setGamePhase={setGamePhase} />;
@@ -72,6 +73,7 @@ const App = () => {
                 autoStart={true}
                 setGamePhase={setGamePhase}
               />
+              <LanguageLogo language={code.language} />
               <TypingGame
                 code={code}
                 updateKey={updateKey}
@@ -89,6 +91,7 @@ const App = () => {
           );
         }
       })()}
+      <Footer />
     </div>
   );
 };
