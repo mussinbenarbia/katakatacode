@@ -35,4 +35,12 @@ module.exports = [
     code: `def difference_by(a, b, fn):\n\tb = set(map(fn, b))\n\treturn [item for item in a if fn(item) not in b]`,
     language: "python",
   },
+  {
+    code: `interface Backpack<Type> {\n\tadd: (obj: Type) => void;\n\tget: () => Type;\n}`,
+    language: "typescript",
+  },
+  {
+    code: `function ExampleWithManyStates() {\n\tconst [age, setAge] = useState(42);\n\tconst [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);\n}`,
+    language: "javascript",
+  },
 ];

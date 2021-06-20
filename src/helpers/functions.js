@@ -5,6 +5,7 @@ import "prismjs/components/prism-cpp.js";
 import "prismjs/components/prism-python.js";
 import "prismjs/components/prism-ruby.js";
 import "prismjs/components/prism-sql.js";
+import "prismjs/components/prism-typescript.js";
 
 export const buildCharClassLookup = (code) => {
   const lookupObj = {};
