@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mussin",
+    "password": "mussin",
+    "database": "katakatacode",
+    "host": "127.0.0.1",
+    "dialect": "pg"
+  },
+  "test": {
+    "username": "mussin",
+    "password": "mussin",
+    "database": "katakatacode",
+    "host": "127.0.0.1",
+    "dialect": "pg"
+  },
+  "production": {
+    "username": "mussin",
+    "password": "mussin",
+    "database": "katakatacode",
+    "host": "127.0.0.1",
+    "dialect": "pg"
+  }
+}
