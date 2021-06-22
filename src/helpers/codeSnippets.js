@@ -43,4 +43,28 @@ module.exports = [
     code: `function ExampleWithManyStates() {\n\tconst [age, setAge] = useState(42);\n\tconst [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);\n}`,
     language: "javascript",
   },
+  {
+    code: `const result = array.reduce((a, b) => a + b);`,
+    language: "javascript",
+  },
+  {
+    code: `class Beer {\n\tconstructor(brand) {\n\t\tthis.beerName = brand;\n\t}\n}`,
+    language: "javascript",
+  },
+  {
+    code: `vegetables = ["corn", "cucumber", "onion"]\n\tfor name in vegetables:\n\t\tprint(name)`,
+    language: "python",
+  },
+  {
+    code: `books = {\n\t"title": "Python",\n\t"author": "Paul Barry"\n}`,
+    language: "python",
+  },
+  {
+    code: `interface Point {\n\tx: number; y: number; \n};`,
+    language: "typescript",
+  },
+  {
+    code: `type OneToFive = 1 | 2 | 3 | 4 | 5;\ntype Bools = true | false;`,
+    language: "typescript",
+  }
 ];
