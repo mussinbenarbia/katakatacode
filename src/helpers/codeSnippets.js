@@ -8,11 +8,11 @@ module.exports = [
     language: "javascript",
   },
   {
-    code: `let arr = testArr.match("/[A-Z]/g", "pizza");`,
+    code: `let arr = testArr.replaceAll("/[A-Z]/g", "pizza");`,
     language: "javascript",
   },
   {
-    code: `let result = something.map(el => <span>yo</span>);`,
+    code: `let elements = names.map(name => <span>\${name}</span>);`,
     language: "javascript",
   },
   {
@@ -31,4 +31,40 @@ module.exports = [
     code: `SELECT * FROM A x LEFT JOIN B y ON y.aId = x.Id`,
     language: "sql",
   },
+  {
+    code: `def difference_by(a, b, fn):\n\tb = set(map(fn, b))\n\treturn [item for item in a if fn(item) not in b]`,
+    language: "python",
+  },
+  {
+    code: `interface Backpack<Type> {\n\tadd: (obj: Type) => void;\n\tget: () => Type;\n}`,
+    language: "typescript",
+  },
+  {
+    code: `function ExampleWithManyStates() {\n\tconst [age, setAge] = useState(42);\n\tconst [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);\n}`,
+    language: "javascript",
+  },
+  {
+    code: `const result = array.reduce((a, b) => a + b);`,
+    language: "javascript",
+  },
+  {
+    code: `class Beer {\n\tconstructor(brand) {\n\t\tthis.beerName = brand;\n\t}\n}`,
+    language: "javascript",
+  },
+  {
+    code: `vegetables = ["corn", "cucumber", "onion"]\n\tfor name in vegetables:\n\t\tprint(name)`,
+    language: "python",
+  },
+  {
+    code: `books = {\n\t"title": "Python",\n\t"author": "Paul Barry"\n}`,
+    language: "python",
+  },
+  {
+    code: `interface Point {\n\tx: number; y: number; \n};`,
+    language: "typescript",
+  },
+  {
+    code: `type OneToFive = 1 | 2 | 3 | 4 | 5;\ntype Bools = true | false;`,
+    language: "typescript",
+  }
 ];

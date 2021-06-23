@@ -8,39 +8,44 @@ html,
   background-color: #2d2d2d;
   height: 100vh;
   font-family: "Roboto";
-  font-size: 1.5rem;
 }
 
 #app {
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 #splash {
   font-size: 2rem;
   color: #ccc;
+  justify-self: center;
 }
 
 #game {
   width: 100%;
   height: 50%;
+  align-self: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
+  font-size: 1.8rem;
 }
 
 #clock {
-  font-size: 3rem;
-  color: #ccc;
-}
-
-#result {
   font-size: 2rem;
   color: #ccc;
 }
 
-.test {
-  display: none;
+#result {
+  align-self: center;
+  font-size: 2rem;
+  color: #ccc;
+}
+
+#language-logo {
+  width: 4rem;
 }
