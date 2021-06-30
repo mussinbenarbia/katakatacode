@@ -7,9 +7,14 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "nodemon": "^2.0.8",
+    "passport": "^0.4.1",
+    "passport-github": "^1.1.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.4",
     "prismjs": "^1.23.0",
@@ -26,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "nodemon server/index.js"
+    "serve": "npx nodemon server/index.js"
   },
   "eslintConfig": {
     "extends": [
