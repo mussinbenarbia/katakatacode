@@ -8,19 +8,15 @@ db.authenticate()
   .catch((err) => console.log(err));
 
 const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("OK");
+app.get("/scores", async (req, res) => {
+  const scores = await TypingTestScore.findAll();
+  res.json(scores);
+});
+
+app.post("/scores", async (req, res) => {
+  await TypingTestScore.create(req.body);
 });
 
 app.listen(8000, () => {});
-
-const testEntry = TypingTestScore.build({
-  userId: "test",
-  completionTimestamp: "tesst",
-  charsPerMinute: 33,
-});
-
-testEntry.save().then((res) => {
-  console.log("saved");
-});
